@@ -27,5 +27,11 @@ namespace ASP_MVC_app.Controllers
             ViewBag.Message = "Suma: " + suma;
             return View();
         }
+
+        public ActionResult Adoptar()
+        {
+            ViewBag.Message = "Encuentra el libro que necesitas: ";
+            return View();
+        }
     }
 }

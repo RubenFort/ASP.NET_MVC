@@ -40,10 +40,19 @@ textarea {
     background-color: #99D19C;
 }
     .btn-primary:hover {
-        background-color: #384C39
+        background-color: #384C39;
     }
 
 /* H2 */
 h2 {
     color: #8F8073;
+}
+
+/* Formulario */
+section.content {
+    margin-top: 30px;
+}
+form label {
+    line-height: 1;
+    font-size: 18px;
 }

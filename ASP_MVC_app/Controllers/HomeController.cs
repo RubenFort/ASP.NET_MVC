@@ -30,10 +30,26 @@ namespace ASP_MVC_app.Controllers
         [HttpPost]
         public ActionResult Contact(Libro libro)
         {
-            ViewBag.Message = "Gracias por registrar la obra: " + libro.Nombre;
-            return View();
+            try
+            {
+                // ModelState: colección de pares de nombre y valor que se enviaron al servidor durante una POST.
+                if (ModelState.IsValid)
+                {
+                    DAL.Libro sdb = new DAL.Libro();
+                    if (sdb.AgregarLibro(libro))
+                    {
+                        ViewBag.Message = "Gracias por registrar la obra: " + libro.Nombre;
+                        ModelState.Clear();
+                    }
+                }
+                return View();
+            }
+            catch
+            {
+                ViewBag.Message = "Error al registrar mascota";
+                return View();
+            }
         }
-
         public ActionResult Adoptar()
         {
             ViewBag.Message = "Encuentra el libro que necesitas: ";

@@ -1,8 +1,34 @@
-﻿@{
+﻿@model ASP_MVC_app.Models.Libro
+@{
     ViewBag.Title = "Contacto";
 }
 <h1>@ViewBag.Title.</h1>
 <h3>@ViewBag.Message</h3>
+
+<section class="content">
+    <!-- Html.BeginForm(Acion, Controlador, Metodo de envio de formulario) -->
+    @using (Html.BeginForm("Contact", "Home", FormMethod.Post))
+    {
+        <div class="form-group">
+            <!-- form-group => clase bootstrap -->
+            @Html.LabelFor(m => m.Nombre, "Nombre");
+            @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control", placeholder = "Nombre del libro" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Paginas, "Páginas");
+            @Html.TextBoxFor(m => m.Paginas, new { @class = "form-control", placeholder = "Numero de páginas del libro" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Descrip, "Descripción");
+            @Html.TextBoxFor(m => m.Descrip, new { @class = "form-control", placeholder = "Descripción del libro" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.CorreoContacto, "Correo de contacto");
+            @Html.TextBoxFor(m => m.CorreoContacto, new { @class = "form-control" })
+        </div>
+        <input type="submit" class="btn btn-primary" value="Enviar" />
+    }
+</section>
 
 <address>
     One Microsoft Way<br />

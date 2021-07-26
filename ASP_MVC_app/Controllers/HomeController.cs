@@ -22,9 +22,7 @@ namespace ASP_MVC_app.Controllers
 
         public ActionResult Contact()
         {
-            //ViewBag.Message = "Your contact page.";
-            int suma = 1 + 1;
-            ViewBag.Message = "Suma: " + suma;
+            ViewBag.Message = "Registra una mascota para darla en adopción.";
             return View();
         }
 

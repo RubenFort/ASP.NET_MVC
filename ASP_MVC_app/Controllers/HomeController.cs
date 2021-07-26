@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ASP_MVC_app.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -23,6 +24,13 @@ namespace ASP_MVC_app.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Registra una mascota para darla en adopción.";
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Contact(Libro libro)
+        {
+            ViewBag.Message = "Gracias por registrar la obra: " + libro.Nombre;
             return View();
         }
 
